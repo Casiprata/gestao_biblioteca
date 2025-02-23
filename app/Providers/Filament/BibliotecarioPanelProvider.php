@@ -19,25 +19,24 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
-class AdminPanelProvider extends PanelProvider
+class BibliotecarioPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->default()
-            ->id('admin')
-            ->path('admin')
+            ->id('bibliotecario')
+            ->path('bibliotecario')
             ->login(CustomLoginPage::class)
             ->colors([
-                'primary' => "#A98E40",
+                'primary' => Color::Amber,
             ])
-            ->viteTheme('resources/css/filament/admin/theme.css')
-            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->viteTheme('resources/css/filament/bibliotecario/theme.css')
+            ->discoverResources(in: app_path('Filament/Bibliotecario/Resources'), for: 'App\\Filament\\Bibliotecario\\Resources')
+            ->discoverPages(in: app_path('Filament/Bibliotecario/Pages'), for: 'App\\Filament\\Bibliotecario\\Pages')
             ->pages([
                 Pages\Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
+            ->discoverWidgets(in: app_path('Filament/Bibliotecario/Widgets'), for: 'App\\Filament\\Bibliotecario\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
