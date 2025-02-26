@@ -20,7 +20,7 @@ class UserResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    
+
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
     protected static ?string $label = 'Usuários';
@@ -45,8 +45,7 @@ class UserResource extends Resource
                 Select::make('role')
                     ->required()
                     ->options([
-                        'ESTUDANTE'=> 'ESTUDANTE',
-                        'PROFESSOR'=> 'PROFESSOR',
+                        'USUARIO'=> 'USUÁRIO',
                         'BIBLIOTECARIO'=> 'BIBLIOTECÁRIO',
                         'ADMIN' => 'ADMIN',
                     ])
@@ -79,8 +78,7 @@ class UserResource extends Resource
                     ->color(function (string $state): string {
                         return match ($state) {
                             'ADMIN' => 'danger',
-                            'ESTUDANTE' => 'info',
-                            'PROFESSOR' => 'success',
+                            'USUARIO' => 'success',
                             'BIBLIOTECARIO' => 'warning',
                         };
                     }),

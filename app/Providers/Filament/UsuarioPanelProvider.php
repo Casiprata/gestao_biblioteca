@@ -28,13 +28,15 @@ class UsuarioPanelProvider extends PanelProvider
             ->path('usuario')
             ->login(CustomLoginPage::class)
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => "#A98E40",
             ])
             ->viteTheme('resources/css/filament/usuario/theme.css')
             ->discoverResources(in: app_path('Filament/Usuario/Resources'), for: 'App\\Filament\\Usuario\\Resources')
             ->discoverPages(in: app_path('Filament/Usuario/Pages'), for: 'App\\Filament\\Usuario\\Pages')
             ->pages([
                 Pages\Dashboard::class,
+                \App\Filament\Usuario\Resources\LivroDigitalResource\Pages\BibliotecaDigital::class,
+                //\App\Filament\Resources\LivroFisicoResource\Pages\BibliotecaFisica::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Usuario/Widgets'), for: 'App\\Filament\\Usuario\\Widgets')
             ->widgets([

@@ -167,6 +167,7 @@ class LivroDigitalResource extends Resource
             'index' => Pages\ListLivroDigitals::route('/'),
             'create' => Pages\CreateLivroDigital::route('/create'),
             'edit' => Pages\EditLivroDigital::route('/{record}/edit'),
+           // 'biblioteca-digital' => Pages\BibliotecaDigital::route('/biblioteca-digital'),
         ];
     }
 }

@@ -28,7 +28,7 @@ class BibliotecarioPanelProvider extends PanelProvider
             ->path('bibliotecario')
             ->login(CustomLoginPage::class)
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => "#A98E40",
             ])
             ->viteTheme('resources/css/filament/bibliotecario/theme.css')
             ->discoverResources(in: app_path('Filament/Bibliotecario/Resources'), for: 'App\\Filament\\Bibliotecario\\Resources')

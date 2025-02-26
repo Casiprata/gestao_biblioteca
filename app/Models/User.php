@@ -27,14 +27,12 @@ class User extends Authenticatable
 
     const ROLE_ADMIN = 'ADMIN';
     const ROLE_BIBLIOTECARIO = 'BIBLIOTECARIO';
-    const ROLE_PROFESSOR = 'PROFESSOR';
-    const ROLE_ESTUDANTE = 'ESTUDANTE';
+    const ROLE_USUARIO = 'USUARIO';
 
     const ROLES = [
         self::ROLE_ADMIN => 'Admin',
         self::ROLE_BIBLIOTECARIO => 'Bibliotecario',
-        self::ROLE_PROFESSOR => 'Professor',
-        self::ROLE_ESTUDANTE => 'Estudante',
+        self::ROLE_USUARIO => 'Usuario',
     ];
 
     public function isAdmin()
@@ -47,14 +45,9 @@ class User extends Authenticatable
         return $this->role === self::ROLE_BIBLIOTECARIO;
     }
 
-    public function isProfessor()
+    public function isUsuario()
     {
-        return $this->role === self::ROLE_PROFESSOR;
-    }
-
-    public function isEstudante()
-    {
-        return $this->role === self::ROLE_ESTUDANTE;
+        return $this->role === self::ROLE_USUARIO;
     }
 
 
@@ -93,7 +86,7 @@ class User extends Authenticatable
         } else if ($panel->getId() === 'bibliotecario') {
             return strtolower($this->role) === strtolower('BIBLIOTECARIO');;
         } else if ($panel->getId() === 'usuario') {
-            return strtolower($this->role) === strtolower('PROFESSOR') || strtolower($this->role) === strtolower('ESTUDANTE');
+            return strtolower($this->role) === strtolower('USUARIO');;
         }
 
         return true;

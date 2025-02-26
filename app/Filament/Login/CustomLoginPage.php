@@ -74,8 +74,8 @@ class CustomLoginPage extends Login
             $role = 'ADMIN';
         } else if (str_contains(Filament::getUrl(), 'bibliotecario')) {
             $role = 'BIBLIOTECARIO';
-        } else {
-            $role = 'PROFESSOR' || 'ESTUDANTE';
+        } else if (str_contains(Filament::getUrl(), 'usuario')) {
+            $role = 'USUARIO';
         } 
 
         return $user->canUserAccessPanel($role);
