@@ -14,7 +14,7 @@
                     @foreach ($livros as $livro)
                         <div class="livro border rounded-lg p-3 shadow bg-white flex flex-col items-center hover:shadow-lg transition" data-titulo="{{ strtolower($livro['titulo']) }}">
                             <!-- Capa do Livro -->
-                            <img src="{{ asset($livro['capa']) }}" alt="{{ $livro['titulo'] }}" class="w-full h-48 object-cover rounded">
+                            <img src="{{ asset('storage/' . $livro['capa']) }}" alt="{{ $livro['titulo'] }}" class="w-full h-48 object-cover rounded">
 
                             <!-- Botões de Ação -->
                             <div class="mt-3 space-y-2 w-full">

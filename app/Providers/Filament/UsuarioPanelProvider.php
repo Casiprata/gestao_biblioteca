@@ -36,7 +36,7 @@ class UsuarioPanelProvider extends PanelProvider
             ->pages([
                 Pages\Dashboard::class,
                 \App\Filament\Usuario\Resources\LivroDigitalResource\Pages\BibliotecaDigital::class,
-                //\App\Filament\Resources\LivroFisicoResource\Pages\BibliotecaFisica::class,
+                \App\Filament\Usuario\Resources\LivroFisicoResource\Pages\BibliotecaFisica::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Usuario/Widgets'), for: 'App\\Filament\\Usuario\\Widgets')
             ->widgets([
