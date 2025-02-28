@@ -67,17 +67,15 @@ class CustomLoginPage extends Login
     }
 
     public function canAcessPanel($user): bool
-    {
-        $role = '';
+{
+    $roles = [];
 
-        if (str_contains(Filament::getUrl(), 'admin')) {
-            $role = 'ADMIN';
-        } else if (str_contains(Filament::getUrl(), 'bibliotecario')) {
-            $role = 'BIBLIOTECARIO';
-        } else if (str_contains(Filament::getUrl(), 'usuario')) {
-            $role = 'USUARIO';
-        } 
-
-        return $user->canUserAccessPanel($role);
+    if (str_contains(Filament::getUrl(), 'admin')) {
+        $roles = [User::ROLE_ADMIN, User::ROLE_BIBLIOTECARIO];
+    } elseif (str_contains(Filament::getUrl(), 'usuario')) {
+        $roles = [User::ROLE_ESTUDANTE, User::ROLE_PROFESSOR];
     }
+
+    return in_array($user->role, $roles);
+}
 }

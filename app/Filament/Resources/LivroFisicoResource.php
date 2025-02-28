@@ -29,6 +29,8 @@ class LivroFisicoResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-bookmark-square';
 
+    protected static ?string $label = 'Livros Físicos';
+
     public static function form(Form $form): Form
     {
         return $form
@@ -69,7 +71,7 @@ class LivroFisicoResource extends Resource
                     ->required(),
                 Textarea::make('descricao')
                     ->columnSpanFull(),
-                    
+
                 FileUpload::make('capa')
                 ->default(null),
             ]);

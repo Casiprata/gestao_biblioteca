@@ -28,13 +28,13 @@ class BibliotecarioPanelProvider extends PanelProvider
             ->path('bibliotecario')
             ->login(CustomLoginPage::class)
             ->colors([
-                'primary' => "#A98E40",
+                'primary' => "#283F4F",
             ])
             ->viteTheme('resources/css/filament/bibliotecario/theme.css')
             ->discoverResources(in: app_path('Filament/Bibliotecario/Resources'), for: 'App\\Filament\\Bibliotecario\\Resources')
             ->discoverPages(in: app_path('Filament/Bibliotecario/Pages'), for: 'App\\Filament\\Bibliotecario\\Pages')
             ->pages([
-                Pages\Dashboard::class,
+                Pages\DashboardBibliotecario::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Bibliotecario/Widgets'), for: 'App\\Filament\\Bibliotecario\\Widgets')
             ->widgets([

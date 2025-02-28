@@ -35,7 +35,7 @@
                                     </button>
                                 @endif
                                 <button onclick="openModal({{ json_encode($livro) }})" class="block w-full text-center bg-gray-500 text-white py-1 px-3 rounded hover:bg-gray-600 transition">
-                                    ℹ️ Ver Informações
+                                    ℹ️ Detalhes
                                 </button>
                             </div>
                         </div>

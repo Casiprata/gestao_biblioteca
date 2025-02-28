@@ -29,13 +29,13 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login(CustomLoginPage::class)
             ->colors([
-                'primary' => "#A98E40",
+                'primary' => "#283F4F",
             ])
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
-                Pages\Dashboard::class,
+                Pages\DashboardAdmin::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([

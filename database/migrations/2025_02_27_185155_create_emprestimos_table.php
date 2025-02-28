@@ -18,7 +18,8 @@ return new class extends Migration
             $table->foreignIdFor(LivroFisico::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
             $table->date('data_emprestimo');
-            $table->date('data_devolucao');            
+            $table->date('data_devolucao');
+            $table->enum('estado', ['pendente', 'emprestado', 'devolvido', 'cancelado'])->default('pendente');
             $table->text('observacao')->nullable();
             $table->timestamps();
         });

@@ -28,7 +28,7 @@ class UsuarioPanelProvider extends PanelProvider
             ->path('usuario')
             ->login(CustomLoginPage::class)
             ->colors([
-                'primary' => "#A98E40",
+                'primary' => "#283F4F",
             ])
             ->viteTheme('resources/css/filament/usuario/theme.css')
             ->discoverResources(in: app_path('Filament/Usuario/Resources'), for: 'App\\Filament\\Usuario\\Resources')

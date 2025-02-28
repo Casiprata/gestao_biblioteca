@@ -18,7 +18,7 @@ class BibliotecaFisica extends Page
 
     public function mount()
     {
-        $this->livrosPorGenero = LivroDigital::with('genero', 'autor', 'editora')
+        $this->livrosPorGenero = LivroFisico::with('genero', 'autor', 'editora')
             ->get()
             ->groupBy(fn($livro) => $livro->genero->nome ?? 'Sem Gênero')
             ->toArray();

@@ -13,5 +13,5 @@ class Emprestimo extends Model
         'livro_fisico_id',
         'usuario_id',
         'observacao',
-    ];  
+    ]; 
 }

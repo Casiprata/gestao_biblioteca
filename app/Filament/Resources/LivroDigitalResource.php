@@ -28,6 +28,8 @@ class LivroDigitalResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
 
+    protected static ?string $label = 'Livros Digitais';
+
     public static function form(Form $form): Form
     {
         return $form

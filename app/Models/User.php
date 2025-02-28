@@ -27,12 +27,16 @@ class User extends Authenticatable
 
     const ROLE_ADMIN = 'ADMIN';
     const ROLE_BIBLIOTECARIO = 'BIBLIOTECARIO';
-    const ROLE_USUARIO = 'USUARIO';
+    const ROLE_ESTUDANTE = 'ESTUDANTE';
+
+    const ROLE_PROFESSOR = 'PROFESSOR';
+
 
     const ROLES = [
         self::ROLE_ADMIN => 'Admin',
         self::ROLE_BIBLIOTECARIO => 'Bibliotecario',
-        self::ROLE_USUARIO => 'Usuario',
+        self::ROLE_ESTUDANTE => 'Estudante',
+        self::ROLE_PROFESSOR => 'Professor',
     ];
 
     public function isAdmin()
@@ -45,11 +49,15 @@ class User extends Authenticatable
         return $this->role === self::ROLE_BIBLIOTECARIO;
     }
 
-    public function isUsuario()
+    public function isEstudante()
     {
-        return $this->role === self::ROLE_USUARIO;
+        return $this->role === self::ROLE_ESTUDANTE;
     }
 
+    public function isProfessor()
+    {
+        return $this->role === self::ROLE_PROFESSOR;
+    }
 
     /**
      * The attributes that should be hidden for serialization.
@@ -82,13 +90,13 @@ class User extends Authenticatable
     public function canAccessPanel(Panel $panel): bool
     {
         if ($panel->getId() === 'admin') {
-            return strtolower($this->role) === strtolower('ADMIN');;
-        } else if ($panel->getId() === 'bibliotecario') {
-            return strtolower($this->role) === strtolower('BIBLIOTECARIO');;
-        } else if ($panel->getId() === 'usuario') {
-            return strtolower($this->role) === strtolower('USUARIO');;
+            return in_array($this->role, [self::ROLE_ADMIN, self::ROLE_BIBLIOTECARIO]);
         }
 
-        return true;
+        if ($panel->getId() === 'usuario') {
+            return in_array($this->role, [self::ROLE_ESTUDANTE, self::ROLE_PROFESSOR]);
+        }
+
+        return false;
     }
 }
