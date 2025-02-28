@@ -7,7 +7,7 @@
             <div class="bg-gray-100 p-4 rounded-lg shadow-md">
                 <!-- Título do Gênero com Ícone -->
                 <h2 class="text-xl font-semibold text-gray-700 cursor-pointer" onclick="toggleGenre('{{ Str::slug($genero) }}')">
-                    {{ $genero }} <i class="fas fa-chevron-down"></i>
+                    {{ $genero }} ⬇️
                 </h2>
 
                 <!-- Grid Responsivo para Exibir os Livros -->

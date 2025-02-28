@@ -40,8 +40,7 @@ class UsuarioPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Usuario/Widgets'), for: 'App\\Filament\\Usuario\\Widgets')
             ->widgets([
-                Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
+                \App\Filament\Usuario\Widgets\UserStatsOverView::class,
             ])
             ->middleware([
                 EncryptCookies::class,
